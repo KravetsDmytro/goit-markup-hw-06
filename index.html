@@ -467,29 +467,41 @@
       <svg class="modal-close-btn-icon" width="8" height="8">
         <use href="./images/icons.svg#icon-close-black"></use>
       </svg>
+   </button>
 
-    </button>
-    <form action="">
+<!-- ====  form  ==== -->
 
-      <label for="name"> name
-        <input type="name" id="name">
-      </label>
-<label for="tel">number
-<input type="tel" id="tel">
+    <h2 class="form-head">Leave your contacts and we will call you back</h2>
+    <form class="form js-form">
 
-<label for="mail">email
-<input type="email" id="mail">
+      <div class="form-filed">
+<label  for="name" class="form-label"> Name</label>
+<input type="name" class="form-input" id="name">
 
-</label>
+</div>
 
-</label>
+<div class="form-filed">
+<label for="tel" >Phone</label>
+<input type="tel" class="form-input" id="tel">
 
+</div>
 
+<div class="form-filed">
+<label for="mail" class="form-label" > Email</label>
+<input type="email" class="form-input" id="mail">
 
+</div>
 
-
-
-    </form>
+<div class="form-filed">
+<label for="coment" class="form-label">Comment</label>
+<textarea name="" id="" cols="30" rows="10" placeholder="Text input"></textarea>
+</div>
+<div class="policy">
+<input type="checkbox" name="policy" id="policy">
+<label for="policy">I accept the terms and conditions of the Privacy Policy</label>
+</div>
+<button type="submit">Send</button>
+</form>
 
 
 
