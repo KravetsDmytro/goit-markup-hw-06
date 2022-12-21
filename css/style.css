@@ -646,6 +646,7 @@ letter-spacing: 0.02em;
   padding-left: 24px;
   padding-right: 24px;
   padding-top: 72px;
+  padding-bottom: 24px;
   background-color: var(--body-color-white);
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
 border-radius: 4px;
@@ -713,16 +714,21 @@ margin-right: auto;
   padding: 8px 38px;
   margin-top: 4px;
   border: 1px solid rgba(33, 33, 33, 0.2);
-  border-radius: 4px;}
-  /* font-weight: 400;
-  font-size: 12px;
-  line-height: 1.2;
-  letter-spacing: 0.01em;
-color: var(--black-text-color);} */
+  border-radius: 4px;
+transition: border-color var(--transition);}
+  
+  .form-input:focus,
+  .form-message:focus
+  {outline: none
+    ;border-color: var(--accent-color);}
+
+    .form-input:focus + .modal-form-icon{
+fill: var(--accent-color);    }
 
 
 .modal-form-input-wraper{
   position: relative;
+  display: block;
 }
 
 .modal-form-icon{ position: absolute;
@@ -739,15 +745,28 @@ transform: translate(0, -50%);}
   font-size: 12px;
   line-height: 14px;  
   letter-spacing: 0.01em;
-    color: rgba(117, 117, 117, 0.5);}
+    }
 
 
   .form-message{
   width: 100%;
   height: 120px;
   resize: none;
+  transition: border-color var(--transition)
+
 
 }
+.form-message::placeholder{
+  font-weight: 400;
+font-size: 12px;
+line-height: 1.2;
+letter-spacing: 0.01em;
+color: rgba(117, 117, 117, 0.5);
+
+}
+
+
+
 
 
 
@@ -761,10 +780,45 @@ letter-spacing: 0.04em;
 color:var(--polycy-color)
       }
 
-  .polycy-checkbox{
+.modal-form-chek{
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+  margin-bottom: 24px;
+  
+}
+
+
+  .modal-form-chek::before{
+    content: "";
+    display: block;
+    width: 16px;
+height: 16px;
 border: 1.25px solid #2E2F42;
 border-radius: 2px;
+cursor: pointer;
+margin-right: 8px;
   }
+  .polycy-checkbox:checked 
+  + .modal-form-chek::before {
+    
+    background-color: var(--accent-color);background-image: url(../images/galka.svg);background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-size:10px 8px;
+  }
+  .polycy-checkbox:focus 
+  + .modal-form-chek::before{
+     width: 16px;
+    height: 16px;
+    left: 20px;
+    top: 55px;
+        border: 1.25px solid #404BBF;
+    border-radius: 2px;}
+
 
   
   .button-form{    
@@ -772,7 +826,6 @@ border-radius: 2px;
       background-color: var(--accent-color);
       width: 170px;
       margin: 0 auto;
-      margin-top: 24px;
       color: var(--body-color-white);
       font-family: inherit;
       cursor: pointer;
