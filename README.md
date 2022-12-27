@@ -1,2 +1,2 @@
-# goit-markup-hw-06
-урок 6
+# goit-markup-hw-07
+адаптивна верстка
